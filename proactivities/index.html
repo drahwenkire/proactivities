@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proactivities</title>
+    <link rel="stylesheet" href="../assets/bulma.min.css">
+    <script src="../assets/kustom.js"></script>
+    <script src="../assets/vue.js"></script>
+    <script src="../assets/html2canvas.min.js"></script>
+    <script src="../assets/jquery-3.4.1.min.js"></script>
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        #report-container {
+            background-color: white;
+            position: relative;
+            width: 540px;
+            height: 0;
+            padding-top: 56.25%;
+        }
+
+        #report {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .boldsmall {
+            font-family: 'Noto Sans';
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+
+        <div id="report-container">
+            <div id="report" class="section">
+                <ul>
+                    <li class=" boldsmall" v-for="task in tasks">{{task.name.toUpperCase()}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="">
+            <button class="button" @click="screenshot">Screenshot</button>
+            <a class="button" v-for="(report, i) in reports" :href="report">Report{{i}}</a>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
