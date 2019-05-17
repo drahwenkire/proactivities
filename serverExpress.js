@@ -3,9 +3,6 @@ const serveIndex = require('serve-index')
 
 const fs = require('fs')
 
-const open = require('open')
-const currentProject = 'blockchainTxsExporter'
-
 const app = express()
 const hostname = '127.0.0.1'
 const port = 3000
@@ -51,5 +48,4 @@ app.use(serveIndex('public'))
 app.listen(port, hostname, () => {
     const homepage = `http://${hostname}:${port}/`
     console.log(`Express server running at ${homepage}`)
-    open(homepage + currentProject)
 })
